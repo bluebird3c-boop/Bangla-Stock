@@ -42,9 +42,11 @@ app.post("/api/forecast", async (req, res) => {
         "signal": "Strong Buy" | "Hold" | "Weak" | "Sell",
         "score": number (0 to 1),
         "targetPrice": number,
+        "stopLoss": number,
         "explanation": "Provide a professional explanation in simple Bangla as requested by the user.",
         "riskLevel": "Low" | "Medium" | "High",
-        "confidence": number (0 to 100)
+        "confidence": number (0 to 100),
+        "sentiment": "Bullish" | "Bearish" | "Neutral"
       }
       ONLY return the JSON.
     `;
