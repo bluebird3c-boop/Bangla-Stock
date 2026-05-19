@@ -20,6 +20,12 @@ const ai = new GoogleGenAI({
   }
 });
 
+// Request Logging
+app.use((req, res, next) => {
+  console.log(`${req.method} ${req.url}`);
+  next();
+});
+
 // AI Forecast Endpoint
 app.post("/api/forecast", async (req, res) => {
   try {
@@ -44,7 +50,7 @@ app.post("/api/forecast", async (req, res) => {
     `;
 
     const result = await ai.models.generateContent({
-      model: "gemini-2.0-flash",
+      model: "gemini-1.5-flash",
       contents: [{ parts: [{ text: prompt }] }],
       config: {
         responseMimeType: "application/json"
@@ -66,6 +72,7 @@ async function startServer() {
     const vite = await createViteServer({
       server: { middlewareMode: true },
       appType: "spa",
+      root: process.cwd(),
     });
     app.use(vite.middlewares);
   } else {

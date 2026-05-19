@@ -6,6 +6,9 @@ import {defineConfig} from 'vite';
 export default defineConfig(() => {
   return {
     plugins: [react(), tailwindcss()],
+    optimizeDeps: {
+      include: ['motion/react', 'recharts', 'lucide-react', 'clsx', 'tailwind-merge'],
+    },
     resolve: {
       alias: {
         '@': path.resolve(__dirname, '.'),

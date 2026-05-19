@@ -17,50 +17,61 @@ function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
-// Mock Data
+// Mock Data (DSE - Dhaka Stock Exchange Examples)
 const MOCK_STOCKS: StockData[] = [
   {
-    symbol: 'AAPL',
-    name: 'Apple Inc.',
-    price: 189.43,
-    change: 2.15,
-    changePercent: 1.15,
+    symbol: 'GP',
+    name: 'Grameenphone Ltd.',
+    price: 261.50,
+    change: 4.20,
+    changePercent: 1.63,
     history: Array.from({ length: 30 }, (_, i) => ({ 
       date: `May ${i + 1}`, 
-      price: 170 + Math.random() * 20 
+      price: 250 + Math.random() * 20 
     }))
   },
   {
-    symbol: 'MSFT',
-    name: 'Microsoft Corp.',
-    price: 415.22,
-    change: -1.45,
-    changePercent: -0.35,
+    symbol: 'SQURPHARMA',
+    name: 'Square Pharmaceuticals',
+    price: 215.30,
+    change: -1.20,
+    changePercent: -0.56,
+    history: Array.from({ length: 30 }, (_, i) => ({ 
+      date: `May ${i + 1}`, 
+      price: 210 + Math.random() * 15 
+    }))
+  },
+  {
+    symbol: 'BATBC',
+    name: 'British American Tobacco',
+    price: 410.70,
+    change: 8.50,
+    changePercent: 2.11,
     history: Array.from({ length: 30 }, (_, i) => ({ 
       date: `May ${i + 1}`, 
       price: 390 + Math.random() * 30 
     }))
   },
   {
-    symbol: 'TSLA',
-    name: 'Tesla, Inc.',
-    price: 173.23,
-    change: 5.67,
-    changePercent: 3.38,
+    symbol: 'BRACBANK',
+    name: 'BRAC Bank PLC',
+    price: 48.90,
+    change: 0.30,
+    changePercent: 0.62,
     history: Array.from({ length: 30 }, (_, i) => ({ 
       date: `May ${i + 1}`, 
-      price: 150 + Math.random() * 40 
+      price: 45 + Math.random() * 5 
     }))
   },
   {
-    symbol: 'GOOGL',
-    name: 'Alphabet Inc.',
-    price: 168.45,
-    change: 0.89,
-    changePercent: 0.53,
+    symbol: 'RENATA',
+    name: 'Renata Limited',
+    price: 785.40,
+    change: -12.40,
+    changePercent: -1.55,
     history: Array.from({ length: 30 }, (_, i) => ({ 
       date: `May ${i + 1}`, 
-      price: 155 + Math.random() * 15 
+      price: 760 + Math.random() * 50 
     }))
   }
 ];
@@ -71,7 +82,10 @@ export default function App() {
   const [isLoading, setIsLoading] = useState(false);
   const [activeTab, setActiveTab] = useState('Overview');
 
+  console.log('App Rendering', { selectedStock });
+
   const getAIForecast = async (stock: StockData) => {
+    console.log('Fetching forecast for', stock.symbol);
     setIsLoading(true);
     try {
       const response = await fetch('/api/forecast', {
@@ -84,9 +98,10 @@ export default function App() {
         })
       });
       const data = await response.json();
+      console.log('Forecast received', data);
       setForecast(data);
     } catch (error) {
-      console.error(error);
+      console.error('Forecast fetch failed', error);
     } finally {
       setIsLoading(false);
     }
