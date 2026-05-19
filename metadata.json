@@ -1,0 +1,8 @@
+{
+  "name": "Sheba AI Finance",
+  "description": "Professional AI-powered stock forecasting and market analysis platform with risk scoring and sentiment insights.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
