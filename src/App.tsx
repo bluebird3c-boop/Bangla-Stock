@@ -17,7 +17,7 @@ function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
-// Mock Data (DSE - Dhaka Stock Exchange Examples)
+// Mock Data (DSE - Dhaka Stock Exchange Major Companies)
 const MOCK_STOCKS: StockData[] = [
   {
     symbol: 'GP',
@@ -26,10 +26,7 @@ const MOCK_STOCKS: StockData[] = [
     change: 4.20,
     changePercent: 1.63,
     fundamentals: { pe: 12.5, eps: 21.0, divYield: 5.4, marketCap: '35,000 Cr', debtToEquity: 0.2 },
-    history: Array.from({ length: 30 }, (_, i) => ({ 
-      date: `May ${i + 1}`, 
-      price: 250 + Math.random() * 20 
-    }))
+    history: Array.from({ length: 30 }, (_, i) => ({ date: `May ${i + 1}`, price: 250 + Math.random() * 20 }))
   },
   {
     symbol: 'SQURPHARMA',
@@ -38,10 +35,7 @@ const MOCK_STOCKS: StockData[] = [
     change: -1.20,
     changePercent: -0.56,
     fundamentals: { pe: 10.2, eps: 18.5, divYield: 4.8, marketCap: '28,000 Cr', debtToEquity: 0.1 },
-    history: Array.from({ length: 30 }, (_, i) => ({ 
-      date: `May ${i + 1}`, 
-      price: 210 + Math.random() * 15 
-    }))
+    history: Array.from({ length: 30 }, (_, i) => ({ date: `May ${i + 1}`, price: 210 + Math.random() * 15 }))
   },
   {
     symbol: 'BATBC',
@@ -50,46 +44,7 @@ const MOCK_STOCKS: StockData[] = [
     change: 8.50,
     changePercent: 2.11,
     fundamentals: { pe: 15.1, eps: 32.4, divYield: 6.2, marketCap: '22,000 Cr', debtToEquity: 0.3 },
-    history: Array.from({ length: 30 }, (_, i) => ({ 
-      date: `May ${i + 1}`, 
-      price: 390 + Math.random() * 30 
-    }))
-  },
-  {
-    symbol: 'BEXIMCO',
-    name: 'Beximco Limited',
-    price: 115.60,
-    change: 2.30,
-    changePercent: 2.03,
-    fundamentals: { pe: 18.2, eps: 6.4, divYield: 2.1, marketCap: '10,000 Cr', debtToEquity: 0.8 },
-    history: Array.from({ length: 30 }, (_, i) => ({ 
-      date: `May ${i + 1}`, 
-      price: 105 + Math.random() * 15 
-    }))
-  },
-  {
-    symbol: 'LHBL',
-    name: 'LafargeHolcim Bangladesh',
-    price: 68.40,
-    change: 1.10,
-    changePercent: 1.63,
-    fundamentals: { pe: 14.3, eps: 4.8, divYield: 3.5, marketCap: '7,500 Cr', debtToEquity: 0.4 },
-    history: Array.from({ length: 30 }, (_, i) => ({ 
-      date: `May ${i + 1}`, 
-      price: 60 + Math.random() * 10 
-    }))
-  },
-  {
-    symbol: 'BXPHARMA',
-    name: 'Beximco Pharmaceuticals',
-    price: 142.90,
-    change: -2.10,
-    changePercent: -1.45,
-    fundamentals: { pe: 11.5, eps: 12.3, divYield: 3.2, marketCap: '6,200 Cr', debtToEquity: 0.2 },
-    history: Array.from({ length: 30 }, (_, i) => ({ 
-      date: `May ${i + 1}`, 
-      price: 135 + Math.random() * 15 
-    }))
+    history: Array.from({ length: 30 }, (_, i) => ({ date: `May ${i + 1}`, price: 390 + Math.random() * 30 }))
   },
   {
     symbol: 'ROBI',
@@ -98,10 +53,7 @@ const MOCK_STOCKS: StockData[] = [
     change: 0.40,
     changePercent: 1.44,
     fundamentals: { pe: 45.2, eps: 0.6, divYield: 1.5, marketCap: '14,000 Cr', debtToEquity: 1.2 },
-    history: Array.from({ length: 30 }, (_, i) => ({ 
-      date: `May ${i + 1}`, 
-      price: 25 + Math.random() * 5 
-    }))
+    history: Array.from({ length: 30 }, (_, i) => ({ date: `May ${i + 1}`, price: 25 + Math.random() * 5 }))
   },
   {
     symbol: 'BRACBANK',
@@ -110,22 +62,196 @@ const MOCK_STOCKS: StockData[] = [
     change: 0.30,
     changePercent: 0.62,
     fundamentals: { pe: 9.8, eps: 5.1, divYield: 4.5, marketCap: '8,000 Cr', debtToEquity: 0.1 },
-    history: Array.from({ length: 30 }, (_, i) => ({ 
-      date: `May ${i + 1}`, 
-      price: 45 + Math.random() * 5 
-    }))
+    history: Array.from({ length: 30 }, (_, i) => ({ date: `May ${i + 1}`, price: 45 + Math.random() * 5 }))
   },
   {
-    symbol: 'RENATA',
-    name: 'Renata Limited',
-    price: 785.40,
-    change: -12.40,
-    changePercent: -1.55,
-    fundamentals: { pe: 22.4, eps: 35.2, divYield: 2.8, marketCap: '9,000 Cr', debtToEquity: 0.2 },
-    history: Array.from({ length: 30 }, (_, i) => ({ 
-      date: `May ${i + 1}`, 
-      price: 760 + Math.random() * 50 
-    }))
+    symbol: 'WALTONHIL',
+    name: 'Walton Hi-Tech Ind.',
+    price: 685.40,
+    change: 15.20,
+    changePercent: 2.27,
+    fundamentals: { pe: 22.4, eps: 42.1, divYield: 3.2, marketCap: '12,500 Cr', debtToEquity: 0.4 },
+    history: Array.from({ length: 30 }, (_, i) => ({ date: `May ${i + 1}`, price: 650 + Math.random() * 50 }))
+  },
+  {
+    symbol: 'MARICO',
+    name: 'Marico Bangladesh Ltd.',
+    price: 2450.40,
+    change: 12.00,
+    changePercent: 0.49,
+    fundamentals: { pe: 35.2, eps: 110.5, divYield: 4.8, marketCap: '6,400 Cr', debtToEquity: 0.1 },
+    history: Array.from({ length: 30 }, (_, i) => ({ date: `May ${i + 1}`, price: 2400 + Math.random() * 100 }))
+  },
+  {
+    symbol: 'BEXIMCO',
+    name: 'Beximco Limited',
+    price: 115.60,
+    change: 2.30,
+    changePercent: 2.03,
+    fundamentals: { pe: 18.2, eps: 6.4, divYield: 2.1, marketCap: '10,000 Cr', debtToEquity: 0.8 },
+    history: Array.from({ length: 30 }, (_, i) => ({ date: `May ${i + 1}`, price: 105 + Math.random() * 15 }))
+  },
+  {
+    symbol: 'LHBL',
+    name: 'LafargeHolcim Bangladesh',
+    price: 68.40,
+    change: 1.10,
+    changePercent: 1.63,
+    fundamentals: { pe: 14.3, eps: 4.8, divYield: 3.5, marketCap: '7,500 Cr', debtToEquity: 0.4 },
+    history: Array.from({ length: 30 }, (_, i) => ({ date: `May ${i + 1}`, price: 60 + Math.random() * 10 }))
+  },
+  {
+    symbol: 'BSCCL',
+    name: 'Bangladesh Submarine Cable',
+    price: 156.40,
+    change: 3.20,
+    changePercent: 2.09,
+    fundamentals: { pe: 10.2, eps: 15.3, divYield: 4.0, marketCap: '2,800 Cr', debtToEquity: 0.1 },
+    history: Array.from({ length: 30 }, (_, i) => ({ date: `May ${i + 1}`, price: 140 + Math.random() * 25 }))
+  },
+  {
+    symbol: 'UPGDCL',
+    name: 'United Power Gen',
+    price: 198.50,
+    change: -4.50,
+    changePercent: -2.22,
+    fundamentals: { pe: 11.8, eps: 16.8, divYield: 6.5, marketCap: '11,000 Cr', debtToEquity: 0.4 },
+    history: Array.from({ length: 30 }, (_, i) => ({ date: `May ${i + 1}`, price: 190 + Math.random() * 20 }))
+  },
+  {
+    symbol: 'CITYBANK',
+    name: 'The City Bank PLC',
+    price: 22.40,
+    change: 0.10,
+    changePercent: 0.45,
+    fundamentals: { pe: 5.2, eps: 4.3, divYield: 5.0, marketCap: '2,500 Cr', debtToEquity: 0.1 },
+    history: Array.from({ length: 30 }, (_, i) => ({ date: `May ${i + 1}`, price: 20 + Math.random() * 4 }))
+  },
+  {
+    symbol: 'EBL',
+    name: 'Eastern Bank PLC',
+    price: 31.20,
+    change: 0.40,
+    changePercent: 1.30,
+    fundamentals: { pe: 6.2, eps: 5.0, divYield: 5.5, marketCap: '3,100 Cr', debtToEquity: 0.1 },
+    history: Array.from({ length: 30 }, (_, i) => ({ date: `May ${i + 1}`, price: 28 + Math.random() * 5 }))
+  },
+  {
+    symbol: 'UNIQUEHRL',
+    name: 'Unique Hotel (Westin)',
+    price: 52.30,
+    change: -0.80,
+    changePercent: -1.51,
+    fundamentals: { pe: 25.4, eps: 2.0, divYield: 2.0, marketCap: '1,500 Cr', debtToEquity: 0.3 },
+    history: Array.from({ length: 30 }, (_, i) => ({ date: `May ${i + 1}`, price: 48 + Math.random() * 8 }))
+  },
+  {
+    symbol: 'ACME',
+    name: 'Acme Laboratories',
+    price: 84.50,
+    change: 1.10,
+    changePercent: 1.32,
+    fundamentals: { pe: 12.1, eps: 7.0, divYield: 3.5, marketCap: '1,800 Cr', debtToEquity: 0.2 },
+    history: Array.from({ length: 30 }, (_, i) => ({ date: `May ${i + 1}`, price: 80 + Math.random() * 10 }))
+  },
+  {
+    symbol: 'MTB',
+    name: 'Mutual Trust Bank',
+    price: 13.40,
+    change: 0.10,
+    changePercent: 0.75,
+    fundamentals: { pe: 5.8, eps: 2.3, divYield: 6.0, marketCap: '1,200 Cr', debtToEquity: 0.1 },
+    history: Array.from({ length: 30 }, (_, i) => ({ date: `May ${i + 1}`, price: 12 + Math.random() * 2 }))
+  },
+  {
+    symbol: 'JAMUNAOIL',
+    name: 'Jamuna Oil Co. Ltd.',
+    price: 178.40,
+    change: 4.20,
+    changePercent: 2.41,
+    fundamentals: { pe: 7.2, eps: 24.8, divYield: 7.5, marketCap: '2,100 Cr', debtToEquity: 0.1 },
+    history: Array.from({ length: 30 }, (_, i) => ({ date: `May ${i + 1}`, price: 165 + Math.random() * 20 }))
+  },
+  {
+    symbol: 'TITASGAS',
+    name: 'Titas Gas TD&D',
+    price: 36.20,
+    change: -0.30,
+    changePercent: -0.82,
+    fundamentals: { pe: 14.5, eps: 2.5, divYield: 4.0, marketCap: '3,500 Cr', debtToEquity: 0.3 },
+    history: Array.from({ length: 30 }, (_, i) => ({ date: `May ${i + 1}`, price: 34 + Math.random() * 4 }))
+  },
+  {
+    symbol: 'BERGERPBL',
+    name: 'Berger Paints BD',
+    price: 1785.40,
+    change: 12.50,
+    changePercent: 0.70,
+    fundamentals: { pe: 28.4, eps: 62.8, divYield: 3.5, marketCap: '8,200 Cr', debtToEquity: 0.1 },
+    history: Array.from({ length: 30 }, (_, i) => ({ date: `May ${i + 1}`, price: 1750 + Math.random() * 50 }))
+  },
+  {
+    symbol: 'OLYMPIC',
+    name: 'Olympic Industries',
+    price: 155.60,
+    change: 2.10,
+    changePercent: 1.37,
+    fundamentals: { pe: 14.2, eps: 10.8, divYield: 4.5, marketCap: '3,100 Cr', debtToEquity: 0.2 },
+    history: Array.from({ length: 30 }, (_, i) => ({ date: `May ${i + 1}`, price: 150 + Math.random() * 10 }))
+  },
+  {
+    symbol: 'SINGERBD',
+    name: 'Singer Bangladesh',
+    price: 142.30,
+    change: -1.20,
+    changePercent: -0.84,
+    fundamentals: { pe: 25.1, eps: 5.6, divYield: 3.2, marketCap: '1,400 Cr', debtToEquity: 0.6 },
+    history: Array.from({ length: 30 }, (_, i) => ({ date: `May ${i + 1}`, price: 138 + Math.random() * 8 }))
+  },
+  {
+    symbol: 'BSRMLTD',
+    name: 'BSRM Limited',
+    price: 92.40,
+    change: 1.50,
+    changePercent: 1.65,
+    fundamentals: { pe: 8.5, eps: 10.8, divYield: 5.0, marketCap: '2,800 Cr', debtToEquity: 0.7 },
+    history: Array.from({ length: 30 }, (_, i) => ({ date: `May ${i + 1}`, price: 88 + Math.random() * 8 }))
+  },
+  {
+    symbol: 'POWERGRID',
+    name: 'Power Grid Co.',
+    price: 48.20,
+    change: 0.40,
+    changePercent: 0.84,
+    fundamentals: { pe: 11.2, eps: 4.3, divYield: 6.0, marketCap: '3,500 Cr', debtToEquity: 1.5 },
+    history: Array.from({ length: 30 }, (_, i) => ({ date: `May ${i + 1}`, price: 46 + Math.random() * 4 }))
+  },
+  {
+    symbol: 'LINDEBD',
+    name: 'Linde Bangladesh',
+    price: 1245.30,
+    change: 8.40,
+    changePercent: 0.68,
+    fundamentals: { pe: 22.4, eps: 55.6, divYield: 4.2, marketCap: '1,800 Cr', debtToEquity: 0.2 },
+    history: Array.from({ length: 30 }, (_, i) => ({ date: `May ${i + 1}`, price: 1200 + Math.random() * 60 }))
+  },
+  {
+    symbol: 'GENEXIL',
+    name: 'Genex Infosys Ltd.',
+    price: 68.40,
+    change: 1.20,
+    changePercent: 1.79,
+    fundamentals: { pe: 18.5, eps: 3.7, divYield: 1.5, marketCap: '800 Cr', debtToEquity: 0.4 },
+    history: Array.from({ length: 30 }, (_, i) => ({ date: `May ${i + 1}`, price: 62 + Math.random() * 10 }))
+  },
+  {
+    symbol: 'BEACONPHAR',
+    name: 'Beacon Pharma',
+    price: 242.30,
+    change: -5.40,
+    changePercent: -2.18,
+    fundamentals: { pe: 45.2, eps: 5.3, divYield: 0.8, marketCap: '5,600 Cr', debtToEquity: 0.5 },
+    history: Array.from({ length: 30 }, (_, i) => ({ date: `May ${i + 1}`, price: 230 + Math.random() * 30 }))
   }
 ];
 
@@ -252,6 +378,26 @@ export default function App() {
                 </button>
               ))}
             </div>
+          </div>
+
+          {/* DSE Market Pulse Indices */}
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+            {[
+              { label: 'DSEX', value: '6,245.30', change: '+12.45', percent: '+0.20%', up: true },
+              { label: 'DS30', value: '2,120.15', change: '-5.12', percent: '-0.24%', up: false },
+              { label: 'DSES', value: '1,358.40', change: '+2.30', percent: '+0.17%', up: true },
+              { label: 'Turnover (Cr)', value: '৳845.2', change: '+45.0', percent: '+5.6%', up: true }
+            ].map((idx) => (
+              <div key={idx.label} className="bg-[#121417] border border-white/5 p-4 rounded-2xl flex justify-between items-center">
+                <div>
+                  <p className="text-[10px] font-bold text-gray-500 uppercase tracking-widest">{idx.label}</p>
+                  <p className="text-lg font-black">{idx.value}</p>
+                </div>
+                <div className={cn("text-[10px] font-bold px-2 py-1 rounded-lg", idx.up ? "bg-emerald-500/10 text-emerald-500" : "bg-rose-500/10 text-rose-500")}>
+                  {idx.percent}
+                </div>
+              </div>
+            ))}
           </div>
 
           <div className="grid grid-cols-12 gap-8">
@@ -440,7 +586,78 @@ export default function App() {
                       <h4 className="text-sm font-black mb-2 flex items-center gap-2">
                         <BrainCircuit className="w-4 h-4 text-blue-500" /> Sector Outlook
                       </h4>
-                      <p className="text-sm text-blue-100/70">The {selectedStock.name.split(' ')[1]} sector is showing strong institutional accumulation based on recent volume surges.</p>
+                      <p className="text-sm text-blue-100/70">The {selectedStock.name.split(' ')[1] || 'current'} sector is showing strong institutional accumulation based on recent volume surges.</p>
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              {activeTab === 'Risks' && (
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 animate-in fade-in slide-in-from-bottom-4 duration-500">
+                  <div className="bg-[#121417] border border-white/5 rounded-3xl p-8">
+                    <h3 className="font-black text-xl mb-6 flex items-center gap-2">
+                       <ShieldAlert className="w-5 h-5 text-rose-500" /> Systemic Risk Profile
+                    </h3>
+                    <div className="space-y-8">
+                      <div>
+                        <div className="flex justify-between items-center mb-2">
+                          <span className="text-gray-500 text-sm font-bold uppercase tracking-widest">Beta (Market Sensitivity)</span>
+                          <span className="font-black text-emerald-400">0.85x</span>
+                        </div>
+                        <div className="h-2 bg-white/5 rounded-full overflow-hidden">
+                          <div className="w-[85%] h-full bg-emerald-500 shadow-[0_0_10px_rgba(16,185,129,0.5)]" />
+                        </div>
+                        <p className="text-[10px] text-gray-600 mt-2 italic">Low sensitivity to index volatility.</p>
+                      </div>
+
+                      <div>
+                        <div className="flex justify-between items-center mb-2">
+                          <span className="text-gray-500 text-sm font-bold uppercase tracking-widest">Volatility (30D)</span>
+                          <span className="font-black text-amber-400">Low</span>
+                        </div>
+                        <div className="h-2 bg-white/5 rounded-full overflow-hidden">
+                          <div className="w-[30%] h-full bg-amber-500 shadow-[0_0_10px_rgba(245,158,11,0.5)]" />
+                        </div>
+                        <p className="text-[10px] text-gray-600 mt-2 italic">Steady accumulation phase detected.</p>
+                      </div>
+
+                      <div className="p-4 bg-white/5 rounded-2xl border border-white/5">
+                        <p className="text-[10px] font-bold text-blue-400 mb-2 uppercase">Institutional Holding</p>
+                        <div className="flex items-end gap-2">
+                          <span className="text-2xl font-black">74.2%</span>
+                          <span className="text-xs text-emerald-500 font-bold flex items-center gap-1 mb-1">
+                            <TrendingUp className="w-3 h-3" /> +2.1%
+                          </span>
+                        </div>
+                        <p className="text-[11px] text-gray-500 mt-2 leading-relaxed">
+                          Sustained buying from local and foreign institutional funds indicates high price support.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="bg-[#121417] border border-white/5 rounded-3xl p-8 flex flex-col">
+                    <h3 className="font-black text-xl mb-6">Expert Warning Bot</h3>
+                    <div className="flex-1 space-y-4">
+                      {[
+                        { title: 'Credit Rating', val: 'AAA+', secure: true },
+                        { title: 'Debt Coverage', val: 'Healthy', secure: true },
+                        { title: 'Market Liquidity', val: 'Premium', secure: true },
+                        { title: 'Regulatory Exposure', val: 'Low', secure: true }
+                      ].map((risk) => (
+                        <div key={risk.title} className="flex items-center justify-between p-4 bg-white/5 rounded-2xl border border-white/5 group hover:border-blue-500/30 transition-all">
+                          <span className="text-sm font-bold text-gray-400">{risk.title}</span>
+                          <div className="flex items-center gap-2">
+                            <span className="text-sm font-black">{risk.val}</span>
+                            <div className="w-2 h-2 rounded-full bg-emerald-500" />
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                    <div className="mt-8 p-6 bg-blue-600/10 rounded-2xl border border-blue-600/20">
+                      <p className="text-sm text-blue-100 font-medium leading-relaxed italic">
+                        "{selectedStock.symbol} exhibits a defensive profile. AI identifies this as an 'Accumulation' candidate with minimal downside risk for the next 45 trading sessions."
+                      </p>
                     </div>
                   </div>
                 </div>
